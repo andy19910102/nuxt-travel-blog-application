@@ -1,0 +1,197 @@
+$navigation-bar-height: 50px;
+$navigation-color: #52565e;
+
+@mixin fast-transition() {
+  transition: all .1s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button:focus {
+  outline: none;
+}
+
+html {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: $navigation-bar-height;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+// 導覽列
+.navigation-bar {
+  width: 100%;
+  height: $navigation-bar-height;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #caccd1;
+  color: $navigation-color;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+
+  .brand {
+    font-size: 16px;
+    color: $navigation-color;
+    font-weight: bold;
+    @include fast-transition();
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+
+.nav-list a {
+  font-size: 16px;
+  color: $navigation-color;
+  font-weight: bold;
+  margin-right: 15px;
+  cursor: pointer;
+  @include fast-transition();
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    @include fast-transition();
+
+    &:hover {
+      opacity: .7;
+    }
+
+    .menu-btn-bar {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: $navigation-color;
+      position: relative;
+      @include fast-transition();
+
+      &:before,
+      &:after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: $navigation-color;
+        position: absolute;
+        left: 0px;
+        @include fast-transition();
+      }
+
+      &:before {
+        top: -5px;
+      }
+
+      &:after {
+        bottom: -5px;
+      }
+    }
+
+
+  }
+
+
+
+  .nav-list {
+    position: fixed;
+    top: 0px;
+    left: -220px;
+    background-color: #fcfcfc;
+    border-right: #caccd1;
+    height: 100vh;
+    width: 220px;
+    box-shadow: 15px 0px 30px rgba(0, 0, 0, .2);
+    padding: 15px 15px;
+    @include fast-transition();
+
+    a {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  .navigation-bar.active {
+    .menu-btn {
+      .menu-btn-bar {
+        transform: rotate(45deg);
+
+        &:before {
+          transform: rotate(90deg);
+          top: 0px;
+        }
+
+        &:after {
+          bottom: 0px;
+        }
+      }
+    }
+
+    .nav-list {
+      left: 0px;
+    }
+  }
+}
+
+.section-title-group {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 9px;
+}
+
+.section-title-bar {
+  width: 50px;
+  height: 6px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+  @include fast-transition();
+}
+
+.section-title-group:hover {
+  .section-title-bar {
+    width: 90px;
+  }
+}
