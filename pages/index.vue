@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NavigationBar />
     <!-- Header -->
     <header class="jumbotron">
       <div class="container">
@@ -41,8 +42,12 @@
 </template>
 
 <script>
+import NavigationBar from "@/components/NavigationBar";
 export default {
   name: "IndexPage",
+  components: {
+    NavigationBar,
+  },
 };
 </script>
 
