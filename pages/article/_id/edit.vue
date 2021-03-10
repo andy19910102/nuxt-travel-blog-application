@@ -8,7 +8,27 @@
     <section class="py-5">
       <div class="container">
         <!-- 編輯文章表單 -->
-        <form></form>
+        <form>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Tags</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Content</label>
+            <textarea cols="30" rows="3" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">Create Article</button>
+          </div>
+        </form>
         <!-- 編輯文章表單 end -->
       </div>
     </section>
