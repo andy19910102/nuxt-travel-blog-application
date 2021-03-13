@@ -18,5 +18,10 @@
 <script>
 export default {
   name: "NavigationBar",
+  methods: {
+    toggleActive() {
+      console.log("準備切換手機版選單");
+    },
+  },
 };
 </script>
