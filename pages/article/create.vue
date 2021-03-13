@@ -22,8 +22,8 @@
             <input type="text" class="form-control" />
           </div>
           <div class="form-group">
-            <label>Content</label>
-            <textarea cols="30" rows="3" class="form-control"></textarea>
+            <label>Image</label>
+            <input type="text" class="form-control" />
           </div>
           <div class="form-group">
             <button class="btn btn-primary">Create Article</button>
@@ -37,5 +37,9 @@
 <script>
 export default {
   name: "CreateArticlePage",
+  data() {
+    return {};
+  },
+  methods: {},
 };
 </script>
